@@ -51,6 +51,9 @@ header {
 
   & .container {
     height: 10rem;
+    display: flex;
+    justify-content: end;
+    align-items: end;
   }
 }
 
@@ -63,6 +66,11 @@ header {
   padding: 0 3.2rem;
 }
 
+.top-two{
+  display: flex;
+  width: 70vw;
+  justify-content: space-between
+}
 
 nav ul {
   display: flex;
@@ -305,9 +313,6 @@ nav ul {
   display: flex;
   gap: 2rem;
 }
-
-/* contact.css */
-
 .contact-section {
   padding: 80px 20px;
   background: #f9f9fb;
@@ -338,8 +343,6 @@ nav ul {
 .desc {
   color: gray;
 }
-
-/* Form */
 
 .contact-form {
   flex: 1;
@@ -397,7 +400,7 @@ button:hover {
 }
 
 .contact-section{
-  height: 88vh;
+  min-height: 88vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -418,3 +421,390 @@ button:hover {
   height: 300px;
 }
 
+.hamburger {
+  display: none;
+  font-size: 2.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.footer-section{
+  height: 23.5vh;
+  width: 99.2vw;
+  background-color: #202020;
+}
+
+.info-section{
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+.info-section h1{
+  color: #fff;
+  margin-bottom: 20px;
+  font-weight: 100;
+}
+
+.info-section p{
+  font-size: 15px;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+  font-weight: 100;
+}
+
+.copyright{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  color: #ffffff;
+  padding: 30px;
+}
+.copyright p {
+  font-size: 12px;
+  font-weight: 100;
+}
+
+@media (max-width: 375px) {
+
+  /* CONTACT SECTION FIX */
+  .contact-section {
+    height: auto;
+    padding: 3rem 1.5rem;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    padding: 0;
+    margin-top: 2rem;
+    gap: 2rem;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+  }
+
+  textarea {
+    height: 100px;
+  }
+
+  /* BUTTON FIX (IMPORTANT) */
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .top-two{
+    margin-left: 22px;
+  }
+
+  /* FOOTER FIX */
+  .footer-section {
+    height: auto;
+    padding: 2rem 1rem;
+  }
+
+  .info-section {
+    text-align: center;
+  }
+
+  .info-section p {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .copyright {
+    flex-direction: column;
+    align-items: center;
+    /* gap: 1rem; */
+    padding: 1rem;
+    text-align: center;
+    background-color: #202020;
+    width: 100vw;
+    margin-left: -9px;
+    padding-top: -15px;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  html {
+    font-size: 55%;
+  }
+
+  .navbar-grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  
+  .hero-container {
+    height: auto;
+    padding: 5rem 2rem;
+  }
+
+  .about {
+    height: auto;
+    padding: 2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .services {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+    .hamburger {
+    display: block;
+    margin-bottom: 30px;
+  }
+
+  .navbar-grid {
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav.list {
+    position: absolute;
+    top: 10rem;
+    right: 0;
+    width: 100%;
+    background: #202020;
+    display: none;
+    padding: 2rem 0;
+  
+  }
+
+  nav.list.open {
+    display: block; 
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .footer-section{
+    width: 100vw;
+    height: 24.5vh;
+  }
+
+  .copyright{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .top-two{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50vh;
+    gap: 2rem;
+  }
+}
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  html {
+    font-size: 58%;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-right {
+    width: 100%;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+  }
+  .footer-section{
+    width: 100vw;
+    height: 24.5vh;
+  }
+
+}
+
+@media (max-width: 767px) {
+
+  html {
+    font-size: 55%;
+  }
+
+  .navbar-grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+  }
+
+  .hero-container {
+    height: auto;
+    padding: 5rem 2rem;
+  }
+
+  .about {
+    height: auto;
+    padding: 2rem;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .about-right {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .services {
+    height: auto;
+    padding: 3rem 2rem;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+    padding: 2rem;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .footer-section{
+    width: 100vw;
+    height: 24.5vh;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  html {
+    font-size: 58%;
+  }
+
+  .about-container {
+    flex-direction: column;
+  }
+
+  .about-right {
+    width: 100%;
+  }
+
+  .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .contact-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .footer-section{
+    width: 100vw;
+    height: 24.5vh;
+  }
+  .top-two{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 95vw;
+    padding: 10rem;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  html {
+    font-size: 62.5%;
+  }
+
+  .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+}

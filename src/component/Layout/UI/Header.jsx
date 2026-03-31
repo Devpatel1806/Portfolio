@@ -1,6 +1,8 @@
 import { NavLink } from "react-router-dom";
+import { useState } from "react";
 
 export const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = (id) => {
     setTimeout(() => {
@@ -9,6 +11,8 @@ export const Header = () => {
         section.scrollIntoView({ behavior: "smooth" });
       }
     }, 0);
+
+    setMenuOpen(false); 
   };
 
   return (
@@ -16,14 +20,26 @@ export const Header = () => {
       <div className="container">
         <div className="grid navbar-grid">
 
-          <nav className="list">
-            <ul>
-              <li>
-                <NavLink to="/" onClick={() => handleScroll("hero-section")}>
-                  Home
-                </NavLink>
-              </li>
 
+          <div className="hamburger" onClick={() => setMenuOpen(!menuOpen)}>
+            ☰
+          </div>  
+
+          <nav className={`list ${menuOpen ? "open" : ""}`}>
+
+            <div className="top-two">
+            <div className="logo">
+              <ul>
+                <li>
+                  <NavLink to="/" onClick={() => handleScroll("hero-section")}>
+                    DEV PATEL
+                  </NavLink>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+            <ul>
               <li>
                 <NavLink to="/" onClick={() => handleScroll("about")}>
                   About
@@ -42,8 +58,9 @@ export const Header = () => {
                 </NavLink>
               </li>
             </ul>
+            </div>
+            </div>
           </nav>
-
         </div>
       </div>
     </header>
